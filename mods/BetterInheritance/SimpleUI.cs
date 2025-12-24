@@ -126,16 +126,5 @@ namespace BetterInheritance
             return newWindow;
         }
 
-        public static Button CreateButton(string name, Sprite icon, string title, string description, Vector2 position, ButtonType type, Transform parent, UnityEngine.Events.UnityAction call)
-        {
-            // Simple button creator using PowerButtons pattern if possible, or manual creation
-            // Since we don't have PowerButtons, we'll try to use standard creation or find a button to clone.
-
-            // Since we want to put this in the main UI, let's look for a button to clone in the power bar.
-            // This is tricky without `PowerButtons` helper.
-            // But we can try to find an existing button in the hierarchy.
-
-            return null; // For now, we handle button creation inside InheritanceUI or simplify.
-        }
     }
 }

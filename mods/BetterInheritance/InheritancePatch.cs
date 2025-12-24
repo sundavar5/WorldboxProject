@@ -14,20 +14,20 @@ namespace BetterInheritance
             HashSet<string> parentTraits = new HashSet<string>();
 
             // Parent 1
-            if (pParent1 != null && pParent1.data != null && pParent1.data.traits != null)
+            if (pParent1 != null)
             {
-                foreach (string traitId in pParent1.data.traits)
+                foreach (ActorTrait trait in pParent1.getTraits())
                 {
-                    parentTraits.Add(traitId);
+                    parentTraits.Add(trait.id);
                 }
             }
 
             // Parent 2
-            if (pParent2 != null && pParent2.data != null && pParent2.data.traits != null)
+            if (pParent2 != null)
             {
-                foreach (string traitId in pParent2.data.traits)
+                foreach (ActorTrait trait in pParent2.getTraits())
                 {
-                    parentTraits.Add(traitId);
+                    parentTraits.Add(trait.id);
                 }
             }
 
