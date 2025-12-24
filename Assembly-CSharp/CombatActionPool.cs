@@ -1,0 +1,16 @@
+﻿using System;
+
+// Token: 0x020000D3 RID: 211
+public enum CombatActionPool
+{
+	// Token: 0x04000720 RID: 1824
+	BEFORE_HIT_DEFLECT,
+	// Token: 0x04000721 RID: 1825
+	BEFORE_HIT_BLOCK,
+	// Token: 0x04000722 RID: 1826
+	BEFORE_HIT,
+	// Token: 0x04000723 RID: 1827
+	BEFORE_ATTACK_MELEE,
+	// Token: 0x04000724 RID: 1828
+	BEFORE_ATTACK_RANGE
+}
