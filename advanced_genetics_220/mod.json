@@ -1,0 +1,10 @@
+{
+    "name": "Advanced Genetics",
+    "author": "Xudros",
+    "version": "3.0.0",
+    "description": "Customize inheritance rates for every trait via a generated config file.",
+    "iconPath": "icon.png",
+    "Dependencies": [],
+    "OptionalDependencies": [],
+    "IncompatibleWith": []
+}

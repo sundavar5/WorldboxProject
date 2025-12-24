@@ -1,0 +1,18 @@
+{
+    "Mod Settings": [
+      {
+        "Id": "Enable Custom Inheritance",
+        "Type": "SWITCH",
+        "IconPath": "ui/icons/inheritpic",
+        "BoolVal": true,
+        "Callback": "ExampleActions:ToggleCustomInheritance"
+      },
+      {
+        "Id": "Regenerate Config",
+        "Type": "SWITCH",
+        "IconPath": "ui/icons/saveIcon4",
+        "BoolVal": false,
+        "Callback": "ExampleActions:RegenerateConfig"
+      }
+    ]
+}

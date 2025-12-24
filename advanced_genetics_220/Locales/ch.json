@@ -1,0 +1,23 @@
+{
+  "Mod Settings": "高級遺傳-模組設定",
+  "Enable Custom Inheritance": "自定義繼承率開關",
+  "Enable Custom Inheritance Description": "套用 inheritance_config.json 的數值到所有特質。",
+  "Regenerate Config": "重新生成配置",
+  "Regenerate Config Description": "使用當前特質列表與預設繼承率重建配置檔。",
+  "Modify_Inherit_Traits": "修正每次遺傳的特質\n製作:Xudros",
+  "Advanced_Genetics": "高級遺傳",
+  "trait_selector_name": "遺傳特質",
+  "trait_selector_desc": "選擇特質，讓其可以100%遺傳給後代",
+  "human_window_tab_name": "編輯人類",
+  "human_window_tab_desc": "為人類種族定製特質",
+  "elf_window_tab_name": "編輯精靈",
+  "elf_window_tab_desc": "為精靈種族定製特質",
+  "dwarves_window_tab_name": "編輯矮人",
+  "dwarves_window_tab_desc": "為矮人種族定製特質",
+  "orc_window_tab_name": "編輯獸人",
+  "orc_window_tab_desc": "為獸人種族定製特質",
+  "human_traits": "選擇特質（人類）",
+  "elf_traits": "選擇特質（精靈）",
+  "dwarf_traits": "選擇特質（矮人）",
+  "orc_traits": "選擇特質（獸人）"
+}

@@ -1,0 +1,21 @@
+{
+  "Mod Settings": "Mod Settings",
+  "Enable Custom Inheritance": "Enable Custom Inheritance",
+  "Enable Custom Inheritance Description": "Apply values from inheritance_config.json to all traits.",
+  "Regenerate Config": "Regenerate Config",
+  "Regenerate Config Description": "Rebuild inheritance_config.json with default inherit rates for every trait.",
+  "Modify_Inherit_Traits": "Modify the traits that will be\ninherited every time\nMade by:Xudros",
+  "Advanced_Genetics": "Advanced Genetics",
+  "trait_selector_name": "Trait Selector",
+  "trait_selector_desc": "Select a trait that every set actor has 100% chance to inherit",
+  "race_tab_name": "Select Races",
+  "race_window_tab_desc": "Select which races you would like the selected traits to be 100% inherited in",
+  "load_name": "Load Selected Settings",
+  "load_desc": "Once you press this button the selected traits and races will be saved and will now start inheriting the traits you selected",
+  "select_traits": "Select Traits",
+  "race_window": "Select Races",
+  "unit_human": "Humans",
+  "unit_elf": "Elves",
+  "unit_dwarf": "Dwarves",
+  "unit_orc": "Orcs"
+}

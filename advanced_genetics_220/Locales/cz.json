@@ -1,0 +1,23 @@
+{
+  "Mod Settings": "高级遗传-模组设置",
+  "Enable Custom Inheritance": "自定义继承率开关",
+  "Enable Custom Inheritance Description": "应用 inheritance_config.json 中的值到所有特质。",
+  "Regenerate Config": "重新生成配置",
+  "Regenerate Config Description": "使用当前特质列表和默认继承率重建配置文件。",
+  "Modify_Inherit_Traits": "修正有每次遗传时的特质\n制作:Xudros",
+  "Advanced_Genetics": "高级遗传",
+  "trait_selector_name": "遗传特质",
+  "trait_selector_desc": "选择特质，让其可以100%遗传给后代",
+  "human_window_tab_name": "编辑人类",
+  "human_window_tab_desc": "为人类种族定制特质",
+  "elf_window_tab_name": "编辑精灵",
+  "elf_window_tab_desc": "为精灵种族定制特质",
+  "dwarves_window_tab_name": "编辑矮人",
+  "dwarves_window_tab_desc": "为矮人种族定制特质",
+  "orc_window_tab_name": "编辑兽人",
+  "orc_window_tab_desc": "为兽人种族定制特质",
+  "human_traits": "选择特质（人类）",
+  "elf_traits": "选择特质（精灵）",
+  "dwarf_traits": "选择特质（矮人）",
+  "orc_traits": "选择特质（兽人）"
+}
