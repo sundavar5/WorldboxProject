@@ -1,0 +1,30 @@
+{
+  "AESIR_UNLOCKALL": {
+    "dependencies": [],
+    "disabled": false,
+    "mod_id": "AESIR_UNLOCKALL",
+    "optional_dependencies": [],
+    "timestamp": 639017578049220225
+  },
+  "XUDROS_ADVANCED_GENETICS": {
+    "dependencies": [],
+    "disabled": false,
+    "mod_id": "XUDROS_ADVANCED_GENETICS",
+    "optional_dependencies": [],
+    "timestamp": 639021635380000000
+  },
+  "JULES_INHERITANCE_MOD": {
+    "dependencies": [],
+    "disabled": false,
+    "mod_id": "JULES_INHERITANCE_MOD",
+    "optional_dependencies": [],
+    "timestamp": 639019505400000000
+  },
+  "JULES_TRAIT_INHERITANCE_MOD": {
+    "dependencies": [],
+    "disabled": false,
+    "mod_id": "JULES_TRAIT_INHERITANCE_MOD",
+    "optional_dependencies": [],
+    "timestamp": 0
+  }
+}
