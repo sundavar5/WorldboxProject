@@ -1,0 +1,8 @@
+{
+    "name": "BetterInheritance",
+    "author": "Jules",
+    "version": "1.0.0",
+    "description": "Allows customizing trait inheritance rates and enables multi-trait inheritance.",
+    "isNCMSMod": false,
+    "targetGameBuild": 0
+}
