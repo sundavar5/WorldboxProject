@@ -10,27 +10,15 @@ namespace BetterInheritance
     {
         public static ScrollWindow CreateScrollWindow(string id, string title)
         {
-            // Check if window already exists
-            if (ScrollWindow.checkWindowExist(id))
+            // Do NOT call ScrollWindow.checkWindowExist(id) because it triggers the "Under Development" fallback window if the ID is missing.
+            // Instead, check internal registry via reflection or just try to find it in the scene if we made it before.
+
+            // Check if we already created it (it should be in the scene)
+            GameObject existingObj = GameObject.Find("Canvas Container Main/Canvas - Windows/windows/" + id);
+            if (existingObj != null)
             {
-                return ScrollWindow.get(id);
+                return existingObj.GetComponent<ScrollWindow>();
             }
-
-            // Try to clone an existing simple window, e.g., "inspect_unit" or "traits"
-            // The method ScrollWindow.checkWindowExist actually attempts to load a prefab from Resources
-            // and if not found loads "windows/not_found".
-            // We want to clone a working window prefab.
-
-            // Let's use the game's way:
-            // 1. Find a reference window (e.g., "inspect_unit")
-            // 2. Instantiate it
-            // 3. Customize it
-
-            // However, ScrollWindow.checkWindowExist does logic to load prefabs.
-            // If we want a custom window, we should manually instantiate one if we don't have a prefab.
-
-            // For NML/NCMS mods, usually `Windows.CreateNewWindow` does this:
-            // It clones the "inspect_unit" window or similar.
 
             GameObject canvasWindows = GameObject.Find("Canvas Container Main/Canvas - Windows");
             if (canvasWindows == null) return null;
@@ -39,20 +27,23 @@ namespace BetterInheritance
 
             // Try to find a reference window to clone
             ScrollWindow referenceWindow = null;
-            foreach (Transform t in windowsTransform)
-            {
-                ScrollWindow w = t.GetComponent<ScrollWindow>();
-                if (w != null && w.name != "not_found") // Avoid broken ones
-                {
-                    referenceWindow = w;
-                    break;
-                }
-            }
+
+            // Try specific stable windows first
+            Transform inspectUnit = windowsTransform.Find("inspect_unit");
+            if (inspectUnit != null) referenceWindow = inspectUnit.GetComponent<ScrollWindow>();
 
             if (referenceWindow == null)
             {
-                // Fallback: try to load from resources
-                referenceWindow = Resources.Load<ScrollWindow>("windows/inspect_unit");
+                foreach (Transform t in windowsTransform)
+                {
+                    ScrollWindow w = t.GetComponent<ScrollWindow>();
+                    if (w != null && w.name != "not_found" && w.gameObject.activeSelf == false)
+                    {
+                        // Clone an inactive valid window to avoid glitches
+                        referenceWindow = w;
+                        break;
+                    }
+                }
             }
 
             if (referenceWindow == null)
@@ -102,18 +93,12 @@ namespace BetterInheritance
                 }
             }
 
-            // Initialize the window using its internal method if needed,
-            // but usually Awake/Start handles it.
-            // We might need to register it in ScrollWindow._all_windows via reflection or just rely on it being there.
-            // Actually ScrollWindow.checkWindowExist adds it to _all_windows if found.
-            // Since we instantiated it manually, we should add it.
-
-            // Reflection to add to _all_windows
+            // Register it
             try
             {
                 var field = typeof(ScrollWindow).GetField("_all_windows", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
                 var dict = (Dictionary<string, ScrollWindow>)field.GetValue(null);
-                if (!dict.ContainsKey(id))
+                if (dict != null && !dict.ContainsKey(id))
                 {
                     dict.Add(id, newWindow);
                 }

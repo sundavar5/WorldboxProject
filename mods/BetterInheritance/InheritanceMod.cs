@@ -24,6 +24,11 @@ namespace BetterInheritance
         private void Update()
         {
             InheritanceUI.Init();
+
+            if (Input.GetKeyDown(KeyCode.I) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
+            {
+                InheritanceUI.ToggleWindow();
+            }
         }
 
         public void Reload()

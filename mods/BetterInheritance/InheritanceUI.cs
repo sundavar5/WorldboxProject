@@ -128,6 +128,21 @@ namespace BetterInheritance
             }
         }
 
+        public static void ToggleWindow()
+        {
+            if (window != null)
+            {
+                if (window.gameObject.activeSelf)
+                {
+                    window.clickHide();
+                }
+                else
+                {
+                    ScrollWindow.showWindow(window.screen_id);
+                }
+            }
+        }
+
         private static void CreateTraitRow(ActorTrait trait, int y)
         {
             // Create a container for the row
@@ -147,8 +162,18 @@ namespace BetterInheritance
             nameObj.transform.SetParent(row.transform);
             Text nameText = nameObj.AddComponent<Text>();
             nameText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-            string localizedName = LocalizedTextManager.getText(trait.id);
-            if (string.IsNullOrEmpty(localizedName)) localizedName = trait.id;
+
+            // Safer localization
+            string localizedName = trait.id;
+            if (LocalizedTextManager.stringExists(trait.id))
+            {
+                localizedName = LocalizedTextManager.getText(trait.id);
+            }
+            else if (LocalizedTextManager.stringExists("trait_" + trait.id))
+            {
+                localizedName = LocalizedTextManager.getText("trait_" + trait.id);
+            }
+
             nameText.text = localizedName;
             nameText.color = Color.white;
             nameText.alignment = TextAnchor.MiddleLeft;
